@@ -1,0 +1,36 @@
+{% load test %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>主页</title>
+</head>
+<body>
+
+    <h1>{{ user }}</h1>
+
+    <table border="1">
+        {% for item in data %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{% mymethod item.id %}</td>
+                <td>{{ item.type }}</td>
+            </tr>
+        {% endfor %}
+
+        {% if not user %}
+            <h2>真</h2>
+        {% else %}
+            <h2>假</h2>
+        {% endif %}
+
+        {% ifequal user 'tanglei1' %}
+            <h2>tanglei</h2>
+        {% else %}
+            <h2>非tanglei</h2>
+        {% endifequal %}
+    </table>
+
+</body>
+</html>
