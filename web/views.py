@@ -63,7 +63,7 @@ def Get(request,type):
 
 
     return HttpResponse('ok')
-
+#把数据嵌套在html中，把这个html字符串返回给客户端
 def all(request):
 
     all_list = usertype.objects.all()
@@ -71,5 +71,3 @@ def all(request):
     result = render_to_response('web/index.html',{'data':all_list,'user':'tanglei'})
 
     return result
-
-    #把数据嵌套在html中，把这个html字符串返回给客户端
